@@ -1,0 +1,110 @@
+<html>
+<head>
+  <script type="text/javascript">
+    function press(num){
+      document.form.textview.value =document.form.textview.value+num;
+    }
+
+    function resultat(){
+      var nb = document.form.textview.value;
+      if (nb)
+    {
+     document.form.textview.value = eval(nb);
+    }
+    }
+
+    function effacer(){
+       document.form.textview.value = "";
+    }
+
+  function retour(){
+    var nb = document.form.textview.value;
+    document.form.textview.value= nb.substring(0,nb.length-1);
+  }
+  </script>
+
+<style>
+      *{
+        margin:0;
+        padding:0;
+      }
+
+      .button{
+        width:50;
+        height:50;
+        fornt-size:25;
+        margin:2;
+        cursor: pointer;
+      }
+.textview{
+  width:217;
+  height:50;
+  fornt-size:25;
+  margin:5;
+}
+
+.principal{
+position : absolute;
+top:50%;
+left:50%;
+transform: translateX(-50%) translateY(-50%);
+
+}
+.background-image{
+  background: linear-gradient(to right, red, cyan);
+  height: 100%;
+}
+
+  </style>
+
+  </head>
+
+  <body>
+
+    <div class="background-image">
+      <h1 style="text-align:center; padding-top:100px;"> Calculatrice basique </h1>
+
+    </div>
+<div class="principal">
+  <form name="form">
+    <input class="textview" name="textview">
+
+    </form>
+    <table>
+    <tr>
+    <td><input class="button" type="button" value="C" onclick="effacer()"></td>
+    <td><input class="button" type="button" value="<" onclick="retour()"></td>
+    <td><input class="button" type="button" value="/" onclick="press('/')"></td>
+    <td><input class="button" type="button" value="x" onclick="press('*')"></td>
+    </tr>
+
+    <tr>
+    <td><input class="button" type="button" value="7" onclick="press(7)"></td>
+    <td><input class="button" type="button" value="8" onclick="press(8)"></td>
+    <td><input class="button" type="button" value="9" onclick="press(9)"></td>
+    <td><input class="button" type="button" value="-" onclick="press('-')"></td>
+    </tr>
+
+    <tr>
+    <td><input class="button" type="button" value="4" onclick="press(4)"></td>
+    <td><input class="button" type="button" value="5" onclick="press(5)"></td>
+    <td><input class="button" type="button" value="6" onclick="press(6)"></td>
+    <td><input class="button" type="button" value="+" onclick="press('+')"></td>
+    </tr>
+
+    <tr>
+    <td><input class="button" type="button" value="1" onclick="press(1)"></td>
+    <td><input class="button" type="button" value="2" onclick="press(2)"></td>
+    <td><input class="button" type="button" value="3" onclick="press(3)"></td>
+    <td rowspan="2"><input class="button" style="height:107" type="button" value="=" onclick="resultat()"></td>
+    </tr>
+
+    <tr>
+
+    <td colspan="2"><input class="button" style="width:107" type="button" value="0" onclick="press(0)"></td>
+    <td><input class="button" type="button" value="." onclick="press('.')"></td>
+    </tr>
+    </table>
+    </body>
+
+    </html>
